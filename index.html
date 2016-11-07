@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body ng-controller="registerController" ng-cloak>
+<section>
+    <h1>Create User</h1>
+    <div id="register_panel">
+
+        <form name="registerForm" class="register" layout="column" >
+            <br/>
+                <div>
+                    <label><strong>FIRST NAME *</strong></label><span>{{msgFirstName}}</span>
+                    <input class="create" name="inputFirstName" ng-model="user.firstName" type="text" ng-required="true">
+                </div>
+                <div>
+                    <label><strong>LAST NAME *</strong></label><span>{{msgLastName}}</span>
+                    <input class="create" name="inputLastName" ng-model="user.lastName" type="text" ng-required="true">
+                    </div>
+                <div >
+                    <label><strong>COMPANY NAME *</strong></label><span>{{msgCompanyName}}</span>
+                    <input class="create" name="inputCompanyName" ng-model="user.companyName" type="text" ng-required="true">
+                </div>
+                <div>
+                    <label><strong>WORK EMAIL *</strong></label><span>{{msgEmail}}</span>
+                    <span class="error" ng-show="registerForm.inputEmail.$error.email">Not valid email!</span>
+                    <input class="create" type="email" name="inputEmail" ng-model="user.email" ng-required="true">
+                </div>
+                <div >
+                    <label><strong>PHONE NUMBER *</strong></label><span>{{msgPhone}}</span>
+                    <input class="create" name="inputPhone" ng-model="user.phone" type="text" ng-required="true">
+                </div>
+
+
+                <div>
+                    <label><strong>COUNTRY *</strong></label><span>{{msgCountry}}</span>
+                    <select name="inputCountry"  ng-model="user.country" ng-required="true">
+                        <option value="">- Please Select -</option>
+                        <option ng-repeat="option in data.countries" ng-value="option.id">{{option.name}}</option>
+                    </select><br>
+                </div>
+
+                <div>
+                    <label><strong>STATE *</strong></label><span>{{msgState}}</span>
+                    <select name="inputState" ng-model="user.state" ng-disabled="disableState" ng-style="stateSytle" ng-required="true">
+                        <option value="">- Please Select (US only)-</option>
+                        <option ng-repeat="option in data.states" ng-value="option.id">{{option.name}}</option>
+                    </select><br>
+                </div>
+
+                <div>
+                    <label><strong>INDUSTRY *</strong></label><span>{{msgIndustry}}</span>
+                    <select name="inputIndustry" ng-model="user.industry" ng-required="true">
+                        <option value="">- Please Select -</option>
+                        <option ng-repeat="option in data.industries" ng-value="option.id">{{option.name}}</option>
+                    </select><br>
+                </div>
+
+                <div>
+                    <label><strong>ZIP/POSTAL *</strong></label><span>{{msgZip}}</span>
+                    <input class="create" name="inputZip" ng-model="user.zip" type="text" ng-required="true">
+                </div>
+                <div class="passwordDiv">
+                    <label><strong>PASSWORD *</strong></label><span>{{msgPassword}}</span>
+                    <img class="shIcon" src="Lock_secure_security_password.png" style="height:15px; width:15px" ng-click="show()"/>
+                    <input type="password" name="inputPassword" placeholder="Password" ng-model="user.password" ng-hide="showPassword" ng-required="true">
+                    <input type="text"  name="inputPassword" placeholder="Password" ng-model="user.password" ng-show="showPassword" ng-required="true">
+                    </label>
+
+                </div>
+                <div class="passwordDiv">
+                    <label><strong>CONFIRM PASSWORD *</strong></label><span>{{msgConfirmPassword}}</span>
+                    <img class="shIcon" src="Lock_secure_security_password.png" style="height:15px; width:15px" ng-click="show()"/>
+                    <input type="password" name="inputConfirmPassword" placeholder="Password" ng-model="user.confirmPassword" ng-hide="showPassword" ng-required="true">
+                    <input type="text" name="inputConfirmPassword" placeholder="Password" ng-model="user.confirmPassword" ng-show="showPassword" ng-required="true">
+                </div>
+
+                <div id="partner">
+                    <label><input type="checkbox" value="first_checkbox"> INTERESTED IN BECOME A PARTNER</label><br>
+                </div>
+
+            <P>By clicking Register, you agree to XXX Company's <a href="">Terms of Use</a> and <a href="">Privacy Policy</a>.</P>
+        </form>
+
+        <button id="submit" ng-click="submit()">REGISTER</button>
+    </div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+*{  font-family: Sans-serif; }
+h1{
+    text-align: center;
+}
+span {
+    color:#ff0000;
+    font-size: 14px;
+    margin-left: 1%;
+}
+
+#register_panel{
+    width:70%;
+    border:solid black 5px;
+    margin:0 auto;
+    background-color: rgba(226, 226, 226, 0.27);
+}
+input,select{
+    margin: 5px 0 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    width:100%;
+    height: 21px;
+    line-height: 24px;
+    padding: 7px;
+    background-size: 25px 1px;
+    border: 1px solid #d6d6d6;
+}
+select{
+    height:40px;
+    width:105%;
+    background-color: white;
+}
+
+form > div{
+    display: inline-block;
+    width:42%;
+    margin:2% 3%;
+}
+
+
+form > div:nth-child(4),form > div:nth-child(5),form > div:nth-child(6),form>div:last-of-type{
+    width:90.5%;
+}
+#partner{font-size: 14px;}
+#partner >label> input{
+   width:20px;
+}
+form > p{
+    margin:20px 50px;
+    font-size: 14px;
+}
+#submit{
+    border:none;
+    border-radius: 5px;
+    height:35px;
+    width:20%;
+    background-color: rgba(55, 157, 9, 0.8);
+    color:white;
+    margin:5% 40%;
+}
+
+#submit:hover{
+    background-color: rgba(23, 61, 6, 0.71);
+}
+
+.passwordDiv{
+    position: relative;
+}
+.shIcon{
+    position: absolute;
+    left:97%;
+    bottom:16px;
+}
